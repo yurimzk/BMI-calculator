@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="./main.js" defer></script>
+  </head>
+  <body>
+    <div class="error-alert hide">Enter numbers only</div>
+    <main>
+      <form>
+        <h1>BMI Calculator</h1>
+        <fieldset>
+          <div class="input-wrapper">
+            <label for="number">Weight <span>(kg)</span></label>
+            <input type="number" placeholder="70" />
+          </div>
+          <div class="input-wrapper">
+            <label for="number">Height <span>(cm)</span></label>
+            <input type="number" placeholder="165" />
+          </div>
+        </fieldset>
+        <button id="btn-submit">
+          Calculate BMI
+          <span
+            ><img src="./assets/arrow.svg" alt="Arrow pointing right"
+          /></span>
+        </button>
+      </form>
+
+      <div class="bmi hide">
+        <h2>Your BMI is X</h2>
+        <img src="./assets/close.svg" alt="close button" />
+      </div>
+    </main>
+  </body>
+</html>
