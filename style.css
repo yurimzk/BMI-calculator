@@ -19,7 +19,7 @@
     --color-label-text: rgb(0, 69, 58);
     --color-bg-input: rgb(220, 226, 233);
     --color-input-text: rgb(33, 37, 41);
-    --color-error-alert: rgb(240, 62, 62);
+    --color-alert-error: rgb(240, 62, 62);
 }
 
 body {
@@ -120,8 +120,14 @@ fieldset {
     background-color: var(--color-btn-hover);
 }
 
-.error-alert {
-    background-color: var(--color-error-alert);
+.alert-error.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.alert-error {
+    background-color: var(--color-alert-error);
     color: var(--color-base-white);
     
     font-size: 1.6rem;
@@ -129,12 +135,16 @@ fieldset {
     line-height: 2.0rem;
     text-align: center;
 
-    width: 100%;
     padding: .8rem;
     position: absolute;
     top: 0;
     left: 0;
-    /* transition: transform 0.3s ease; */
+    right: 0;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: transform 0.3s ease;
 }
 
 .modal-wrapper.open {
