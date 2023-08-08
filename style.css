@@ -10,6 +10,7 @@
     font-size: 62.5%;
 
     --color-base-white: rgb(255, 255, 255);
+    --color-base-black: rgba(0, 0, 0, 0.7);
     --color-light-gray: rgb(163, 162, 162);
     --color-bg-body: rgb(4, 9, 36);
     --color-base-blue: rgb(2, 121, 157);
@@ -119,10 +120,6 @@ fieldset {
     background-color: var(--color-btn-hover);
 }
 
-.hide {
-    display: none;
-}
-
 .error-alert {
     background-color: var(--color-error-alert);
     color: var(--color-base-white);
@@ -140,13 +137,34 @@ fieldset {
     /* transition: transform 0.3s ease; */
 }
 
-.bmi {
-    background-color: var(--color-base-white);
-    padding: 4.8rem 6.4rem 6.4rem;
-    position: relative;
+.modal-wrapper.open {
+    opacity: 1;
+    visibility: visible;
 }
 
-.bmi img {
+.modal-wrapper{
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-base-black);
+
+    display: grid;
+    place-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.bmi {
+    background-color: var(--color-base-white);
+    padding: 6.4rem;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 .2rem .4rem 0 rgba(0, 0, 0, 0.10);
+}
+
+.bmi button {
+    border: 0;
+    background-color: var(--color-base-white);
     position: absolute;
     top: 1.6rem;
     right: 1.6rem;
@@ -154,6 +172,6 @@ fieldset {
     transition: transform .1s ease;
 }
 
-.bmi img:hover {
+.bmi button:hover {
     transform: scale(1.1);
 }
